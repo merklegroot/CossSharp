@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CossSharpLib", "CossSharpLib\CossSharpLib.csproj", "{57E2BF6E-6E10-436D-A624-3EEB708F839E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CossSharp.Lib", "CossSharp.Lib\CossSharp.Lib.csproj", "{57E2BF6E-6E10-436D-A624-3EEB708F839E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CossSharpLibTests", "CossSharpLibTests\CossSharpLibTests.csproj", "{01131204-2B87-4F35-9423-97BB9002DBDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CossSharp.Lib.Tests", "CossSharp.Lib.Tests\CossSharp.Lib.Tests.csproj", "{01131204-2B87-4F35-9423-97BB9002DBDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
