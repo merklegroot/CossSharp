@@ -79,8 +79,17 @@ _orderBookCache["NEO_BTC"] = new { TimeStampUtc = timeStampUtc, Contents = conte
 var orderBook = JsonConvert.DeserializeObject<CossOrderBook>(contents);
 
 ```
-The "raw" version is there to make caching the results easier.
-If you don't want to cache your results, just use the regular version.
+
+## Synchronizing Clocks
+The private API calls use a nonce based on your machine's clock.  
+The your clock and the Coss server's clock aren't in sync, your API call will fail.
+The SynchronizeTime() gets the time from Coss's server and adjusts the nonce it sends accordingly.
+I call this method every few minutes to avoid errors.
+
+```CSharp
+// Call this method every few minutes. It works wonders.
+_cossClient.SynchronizeTime();
+```
 
 ## API Key
 Some API methods, such as GetOrderBook(), can be called by anyone without an API key.  
@@ -89,7 +98,9 @@ Consider carefully how you will store and retrieve this key.
 If someone gets a hold of your key, they could steal your funds.  
 
 ## How to build
-You can use either Visual Studio or Visual Studio Code to build.  
-Windows is needed for Visual Studio.  
-Visual Studio Code runs on Windows, Linux, and Mac.  
-For Raspberry Pi, you can use headmelted's distribution of Visual Studio Code. https://code.headmelted.com/  
+You can use either Visual Studio (Community edition is succificient) or Visual Studio Code to build.  
+Visual Studio is a full IDE geared towards (but not exclusive to) .NET and runs on Windows.
+Visual Studio Code is a gereralized IDE based on Atom and runs on Windows, Linux, and Mac.
+Both can be downloaded for free.
+On the Raspberry Pi and Chrome Book, you can use headmelted's distribution of Visual Studio Code. https://code.headmelted.com/  
+
