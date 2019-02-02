@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CossSharp.Lib.Tests
 {
@@ -70,6 +71,13 @@ namespace CossSharp.Lib.Tests
         {
             _cossClient.CancelOrder(_apiKey, "ETH", "BTC", "1234");
             _httpWebClient.Verify(mock => mock.HttpSync("https://trade.coss.io/c/api/v1/order/cancel", "DELETE", It.IsAny<byte[]>(), "application/json", It.IsAny<Dictionary<string, string>>()));
+        }
+
+        [TestMethod]
+        public void Get_order_book()
+        {
+            _cossClient.GetOrderBookRaw("KAYA", "ETH");
+            _httpWebClient.Verify(mock => mock.GetSync("https://engine.coss.io/api/v1/dp?symbol=KAYA_ETH"));
         }
     }
 }

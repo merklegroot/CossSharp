@@ -26,6 +26,8 @@ namespace CossSharp.Lib
 
         string GetOrderBookRaw(string symbol, string baseSymbol);
 
+        CossOrderBook GetOrderBook(string symbol, string baseSymbol);
+
         string GetBalanceRaw(CossApiKey apiKey);
         List<CossBalanceItem> GetBalance(CossApiKey apiKey);
 

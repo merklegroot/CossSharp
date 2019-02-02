@@ -71,6 +71,9 @@ namespace CossSharp.Lib
             return _httpWebClient.GetSync(url);
         }
 
+        public CossOrderBook GetOrderBook(string symbol, string baseSymbol)
+             => GetAndDeserialize<CossOrderBook>(() => GetOrderBookRaw(symbol, baseSymbol));
+
         public string GetBalanceRaw(CossApiKey apiKey)
         {
             const string Path = "account/balances";
