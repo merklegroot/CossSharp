@@ -4,13 +4,6 @@
 Official API documentation: https://api.coss.io/v1/spec  
 Exchange: https://coss.io/  
 
-## Other languages
-#### Not into C#? Give one of these other clients a try.
-I am not affiliated with any of the projects listed below.  
-Python: https://github.com/Shdjfjsks/pyCOSS/  
-Node.js: https://github.com/cryptodeal/Coss-API-Node  
-CCXT also supports the Coss API. https://github.com/ccxt/ccxt 
-
 ## Examples
 ### Initializing
 ```CSharp
